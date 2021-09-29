@@ -23,11 +23,11 @@ namespace HotelListing.IRepository
 
         Task InsertRange(IEnumerable<T> entities);
 
-        Task Delete(int id);
+        void Delete(int id);
 
-        Task DeleteRange(IEnumerable<T> entities);
+        void DeleteRange(IEnumerable<T> entities);
 
-        Task Update(T entity);
+        void Update(T entity);
 
 
     }
