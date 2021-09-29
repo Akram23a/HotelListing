@@ -1,0 +1,6 @@
+HotelListing/obj
+HotelListing/bin
+*.dll
+HotelListing/Migrations
+.vs
+log-*.txt
