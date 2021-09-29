@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelListing.Controllers.Data
@@ -8,6 +9,6 @@ namespace HotelListing.Controllers.Data
         public int Id { get; set; }
         public string Name { get; set; }
         public string Abreveation { get; set; }
-
+        public virtual IList<Hotel> Hotels { get; set; }
     }
 }

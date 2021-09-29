@@ -17,6 +17,7 @@
     </PackageReference>
     <PackageReference Include="Json.Net" Version="1.0.33" />
     <PackageReference Include="NuGet.PackageManagement" Version="5.11.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,11 +26,14 @@
     <Folder Include="IRepository\" />
     <Folder Include="Repository\" />
     <Folder Include="DTOs\" />
+    <Folder Include="Configurations\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Migrations\" />
     <None Remove="IRepository\" />
     <None Remove="Repository\" />
     <None Remove="DTOs\" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Configurations\" />
   </ItemGroup>
 </Project>

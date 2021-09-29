@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
+using HotelListing.Configurations;
 
 namespace HotelListing
 {
@@ -39,6 +41,9 @@ namespace HotelListing
                     .AllowAnyMethod()
                     .AllowAnyHeader());
             });
+
+            services.AddAutoMapper(typeof(MapperInitializer));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HotelListing", Version = "v1" });
