@@ -87,3 +87,8 @@
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/ref/HotelListing.dll
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.pdb
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.genruntimeconfig.cache
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/AutoMapper.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll

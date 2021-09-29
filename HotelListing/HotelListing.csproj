@@ -18,15 +18,16 @@
     <PackageReference Include="Json.Net" Version="1.0.33" />
     <PackageReference Include="NuGet.PackageManagement" Version="5.11.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.10" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Data\" />
     <Folder Include="Migrations\" />
     <Folder Include="IRepository\" />
     <Folder Include="Repository\" />
     <Folder Include="DTOs\" />
     <Folder Include="Configurations\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Migrations\" />
@@ -35,5 +36,7 @@
     <None Remove="DTOs\" />
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
     <None Remove="Configurations\" />
+    <None Remove="Data\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
   </ItemGroup>
 </Project>

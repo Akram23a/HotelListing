@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Rv0EfGnvcNwHbDcz2SiD/MaGpry72oIAMrFcbM309PDuhtioBZ8WixW2rEiN498vre/Wb7sl2IAkNL5JNbzDbw==",
+  "dgSpecHash": "5tB7q7kqgE1vvjTrvIAA35XWjQ8e2pnwNikPIY9fIIGYY1JaHwKAv3ca6+v4G1jsmEI5A5uRAsVfzKEXp/y8kw==",
   "success": true,
   "projectFilePath": "/Users/mac/Projects/HotelListing/HotelListing/HotelListing.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "/Users/mac/.nuget/packages/json.net/1.0.33/json.net.1.0.33.nupkg.sha512",
     "/Users/mac/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/5.0.10/microsoft.aspnetcore.authentication.jwtbearer.5.0.10.nupkg.sha512",
     "/Users/mac/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/5.0.10/microsoft.aspnetcore.authentication.openidconnect.5.0.10.nupkg.sha512",
+    "/Users/mac/.nuget/packages/microsoft.aspnetcore.jsonpatch/5.0.10/microsoft.aspnetcore.jsonpatch.5.0.10.nupkg.sha512",
+    "/Users/mac/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/5.0.10/microsoft.aspnetcore.mvc.newtonsoftjson.5.0.10.nupkg.sha512",
     "/Users/mac/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/microsoft.data.sqlclient/2.0.1/microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "/Users/mac/.nuget/packages/microsoft.data.sqlclient.sni.runtime/2.0.1/microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
@@ -49,7 +51,8 @@
     "/Users/mac/.nuget/packages/microsoft.web.xdt/3.0.0/microsoft.web.xdt.3.0.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "/Users/mac/.nuget/packages/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg.sha512",
+    "/Users/mac/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
+    "/Users/mac/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "/Users/mac/.nuget/packages/nuget.commands/5.11.0/nuget.commands.5.11.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/nuget.common/5.11.0/nuget.common.5.11.0.nupkg.sha512",
     "/Users/mac/.nuget/packages/nuget.configuration/5.11.0/nuget.configuration.5.11.0.nupkg.sha512",

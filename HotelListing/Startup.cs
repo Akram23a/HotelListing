@@ -15,6 +15,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
 using HotelListing.Configurations;
+using HotelListing.Repository;
+using HotelListing.IRepository;
 
 namespace HotelListing
 {
@@ -44,12 +46,15 @@ namespace HotelListing
 
             services.AddAutoMapper(typeof(MapperInitializer));
 
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HotelListing", Version = "v1" });
             });
 
-            services.AddControllers();
+            //ignore Loops between intradependent classes
+            services.AddControllers().AddNewtonsoftJson(
+                op => op.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
         }
 
