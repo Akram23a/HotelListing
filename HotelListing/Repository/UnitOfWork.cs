@@ -1,10 +1,34 @@
 ﻿using System;
+using System.Threading.Tasks;
+using HotelListing.Controllers.Data;
+using HotelListing.IRepository;
+
 namespace HotelListing.Repository
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
-        public UnitOfWork()
+        private readonly DatabaseContext _context;
+        private IGenericRepository<Country> _countries;
+        private IGenericRepository<Hotel> _hotels;
+
+        public UnitOfWork(DatabaseContext context)
         {
+            _context = context;
+        }
+
+        public IGenericRepository<Country> CountriesRepository => _countries ??= new GenericRepository<Country>(_context);
+
+        public IGenericRepository<Hotel> HotelsRepository => _hotels ??= new GenericRepository<Hotel>(_context);
+
+        public void Dispose()
+        {
+            _context.Dispose();
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

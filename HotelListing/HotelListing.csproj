@@ -24,10 +24,12 @@
     <Folder Include="Migrations\" />
     <Folder Include="IRepository\" />
     <Folder Include="Repository\" />
+    <Folder Include="DTOs\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Migrations\" />
     <None Remove="IRepository\" />
     <None Remove="Repository\" />
+    <None Remove="DTOs\" />
   </ItemGroup>
 </Project>
