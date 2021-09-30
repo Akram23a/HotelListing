@@ -11,6 +11,9 @@
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Humanizer.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.Data.SqlClient.dll
@@ -22,6 +25,8 @@
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.Extensions.DependencyModel.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.Extensions.Identity.Core.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.Extensions.Identity.Stores.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.Identity.Client.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
@@ -74,9 +79,3 @@
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/ref/HotelListing.dll
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.pdb
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.genruntimeconfig.cache
-/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll
-/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.Extensions.Identity.Core.dll
-/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/Microsoft.Extensions.Identity.Stores.dll
-/Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.csproj.AssemblyReference.cache
