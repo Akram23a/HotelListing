@@ -1,17 +1,16 @@
-﻿using System;
+﻿using HotelListing.Data;
+using HotelListing.IRepository;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using HotelListing.Controllers.Data;
-using HotelListing.IRepository;
-using Microsoft.EntityFrameworkCore;
 
 namespace HotelListing.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-
         private readonly DatabaseContext _context;
         private readonly DbSet<T> _db;
 
@@ -19,15 +18,12 @@ namespace HotelListing.Repository
         {
             _context = context;
             _db = _context.Set<T>();
-
         }
 
-
-        public async void Delete(int id)
+        public async Task Delete(int id)
         {
             var entity = await _db.FindAsync(id);
             _db.Remove(entity);
-
         }
 
         public void DeleteRange(IEnumerable<T> entities)
@@ -35,39 +31,42 @@ namespace HotelListing.Repository
             _db.RemoveRange(entities);
         }
 
-        public async Task<T> Get(Expression<Func<T, bool>> expression, List<string> includes)
+        public async Task<T> Get(Expression<Func<T, bool>> expression, List<string> includes = null)
         {
             IQueryable<T> query = _db;
-            if(includes != null)
+            if (includes != null)
             {
-                foreach(var property in includes)
+                foreach (var includePropery in includes)
                 {
-                    query.Include(property);
+                    query = query.Include(includePropery);
                 }
             }
+
             return await query.AsNoTracking().FirstOrDefaultAsync(expression);
         }
 
-        public async Task<IList<T>> GetAll(Expression<Func<T, bool>> expression = null,
-            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-            List<string> includes = null)
+        public async Task<IList<T>> GetAll(Expression<Func<T, bool>> expression = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, List<string> includes = null)
         {
             IQueryable<T> query = _db;
-            if(expression != null)
+
+            if (expression != null)
             {
                 query = query.Where(expression);
             }
+
             if (includes != null)
             {
-                foreach (var property in includes)
+                foreach (var includePropery in includes)
                 {
-                    query.Include(property);
+                    query = query.Include(includePropery);
                 }
             }
-            if(orderBy != null)
+
+            if (orderBy != null)
             {
                 query = orderBy(query);
             }
+
             return await query.AsNoTracking().ToListAsync();
         }
 

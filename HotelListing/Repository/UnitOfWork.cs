@@ -1,7 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using HotelListing.Controllers.Data;
+﻿using HotelListing.Data;
 using HotelListing.IRepository;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HotelListing.Repository
 {
@@ -15,10 +17,10 @@ namespace HotelListing.Repository
         {
             _context = context;
         }
-
         public IGenericRepository<Country> CountriesRepository => _countries ??= new GenericRepository<Country>(_context);
 
         public IGenericRepository<Hotel> HotelsRepository => _hotels ??= new GenericRepository<Hotel>(_context);
+
 
         public void Dispose()
         {

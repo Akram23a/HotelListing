@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 
-namespace HotelListing.Controllers.Data
+namespace HotelListing.Data
 {
     public class DatabaseContext : DbContext
     {

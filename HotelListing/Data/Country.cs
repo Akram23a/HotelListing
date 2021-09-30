@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
-namespace HotelListing.Controllers.Data
+namespace HotelListing.Data
 {
     public class Country
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using HotelListing.Controllers.Data;
+using HotelListing.Data;
 
 namespace HotelListing.IRepository
 {

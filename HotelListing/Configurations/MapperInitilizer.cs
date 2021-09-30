@@ -1,20 +1,18 @@
 ﻿using System;
 using AutoMapper;
-using HotelListing.Controllers.Data;
+using HotelListing.Data;
 using HotelListing.DTOs;
 
 namespace HotelListing.Configurations
 {
-    public class MapperInitializer : Profile
+    public class MapperInitilizer : Profile
     {
-        public MapperInitializer()
+        public MapperInitilizer()
         {
-            CreateMap<Country, CreateCountryDTO>().ReverseMap();
             CreateMap<Country, CountryDTO>().ReverseMap();
-
-            CreateMap<Hotel, CreateHotelDTO>().ReverseMap();
+            CreateMap<Country, CreateCountryDTO>().ReverseMap();
             CreateMap<Hotel, HotelDTO>().ReverseMap();
-
+            CreateMap<Hotel, CreateHotelDTO>().ReverseMap();
         }
     }
 }
