@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using HotelListing.Data;
+using HotelListing.DTOs;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,36 +16,78 @@ namespace HotelListing.Controllers
     [Route("api/[controller]")]
     public class AccountController : Controller
     {
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        public readonly ILogger<AccountController> _logger;
+        public readonly IMapper _mapper;
+        public readonly UserManager<APIUser> _userManager;
+        //public readonly SignInManager<APIUser> _signInManager;
+
+        public AccountController(
+          ILogger<AccountController> logger,
+          IMapper mapper,
+          UserManager<APIUser> userManager
+          //  ,
+          //SignInManager<APIUser> signInManager
+          )
         {
-            return new string[] { "value1", "value2" };
+            _logger = logger;
+            _mapper = mapper;
+            _userManager = userManager;
+            //_signInManager = signInManager;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Route("register")]
+        public async Task<IActionResult> Register([FromBody] UserDTO userDTO)
         {
+            _logger.LogInformation($"Registration Attempt for {userDTO.Email}");
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var user = _mapper.Map<APIUser>(userDTO);
+                user.UserName = userDTO.Email;
+                var result = await _userManager.CreateAsync(user, userDTO.Password);
+                if (!result.Succeeded)
+                {
+                    return BadRequest("User registration attempt failed");
+                }
+                return Accepted();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Internal server error in {nameof(Register)}");
+                return Problem($"Something went wrong in the {nameof(Register)}", statusCode: 500);
+            }
+
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //[HttpPost]
+        //[Route("login")]
+        //public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
+        //{
+        //    _logger.LogInformation($"Login Attempt for {loginDTO.Email}");
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    try
+        //    {
+        //        var result = await _signInManager.PasswordSignInAsync((string)loginDTO.Email, (string)loginDTO.Password , false, false);
+        //        if (!result.Succeeded)
+        //        {
+        //            return Unauthorized(loginDTO);
+        //        }
+        //        return Accepted();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, $"Internal server error in {nameof(Register)}");
+        //        return Problem($"Something went wrong in the {nameof(Register)}", statusCode: 500);
+        //    }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //}
+
     }
 }

@@ -22,5 +22,9 @@
 
   <ItemGroup>
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Configurations\Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configurations\Entities\" />
   </ItemGroup>
 </Project>
