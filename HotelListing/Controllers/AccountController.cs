@@ -51,14 +51,19 @@ namespace HotelListing.Controllers
                 var result = await _userManager.CreateAsync(user, userDTO.Password);
                 if (!result.Succeeded)
                 {
-                    return BadRequest("User registration attempt failed");
+                    foreach(var error in result.Errors)
+                    {
+                        ModelState.AddModelError(error.Code, error.Description);
+                    }
+                    return BadRequest(ModelState);
                 }
+                await _userManager.AddToRolesAsync(user, userDTO.Roles);
                 return Accepted();
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"Internal server error in {nameof(Register)}");
-                return Problem($"Something went wrong in the {nameof(Register)}", statusCode: 500);
+                return Problem($"Something went wrong in the {nameof(Register)} {ex.ToString()}", statusCode: 500);
             }
 
         }

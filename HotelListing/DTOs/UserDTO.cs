@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace HotelListing.DTOs
@@ -21,6 +22,8 @@ namespace HotelListing.DTOs
 
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
+
+        public ICollection<string> Roles { get; set; }
 
 
     }
