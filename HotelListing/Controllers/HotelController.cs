@@ -95,5 +95,38 @@ namespace HotelListing.Controllers
             }
 
         }
+
+        [Authorize(Roles = "Administrator")]
+        [HttpPut("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateHotel(int id, UpdateHotelDTO updateHotelDTO) {
+            if (!ModelState.IsValid || id<1)
+            {
+                _logger.LogError($"Invalid Update Attempt in {nameof(UpdateHotel)}");
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var hotel = await _unitOfWork.HotelsRepository.Get(q => q.Id == id);
+                if(hotel == null)
+                {
+                    _logger.LogError($"Invalid Update Attempt in {nameof(UpdateHotel)}");
+                    return BadRequest("Submitteed data is invalid");
+                }
+                _mapper.Map(updateHotelDTO, hotel);
+                _unitOfWork.HotelsRepository.Update(hotel);
+                await _unitOfWork.Save();
+                return NoContent();
+                
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong  in {nameof(UpdateHotel)} {ex}");
+                return StatusCode(500, "Internal server error, Try again later");
+
+            }
+        }
     }
 }
