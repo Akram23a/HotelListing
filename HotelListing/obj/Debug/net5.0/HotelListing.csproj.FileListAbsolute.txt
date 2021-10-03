@@ -79,3 +79,4 @@
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/ref/HotelListing.dll
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.pdb
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.genruntimeconfig.cache
+/Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.csproj.AssemblyReference.cache

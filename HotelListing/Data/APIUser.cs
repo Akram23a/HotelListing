@@ -1,4 +1,5 @@
 ﻿using System;
+using HotelListing.DTOs;
 using Microsoft.AspNetCore.Identity;
 
 namespace HotelListing.Data
@@ -7,5 +8,10 @@ namespace HotelListing.Data
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public static implicit operator APIUser(UserDTO v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
