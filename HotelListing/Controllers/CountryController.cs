@@ -129,5 +129,38 @@ namespace HotelListing.Controllers
             }
         }
 
+        //[Authorize(Roles = "Administrator")]
+        [HttpDelete("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> DeleteCountry(int id)
+        {
+            if (!ModelState.IsValid || id < 1)
+            {
+                _logger.LogError($"Invalid Delete Attempt in {nameof(DeleteCountry)}");
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var country = await _unitOfWork.CountriesRepository.Get(q => q.Id == id);
+                if (country == null)
+                {
+                    _logger.LogError($"Invalid Delete Attempt in {nameof(DeleteCountry)}");
+                    return BadRequest("Submitted ID is invalid");
+                }
+                await _unitOfWork.CountriesRepository.Delete(country.Id);
+                await _unitOfWork.Save();
+                return NoContent();
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong  in {nameof(DeleteCountry)} {ex}");
+                return StatusCode(500, "Internal server error, Try again later");
+
+            }
+        }
+
     }
 }
