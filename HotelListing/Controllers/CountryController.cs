@@ -32,11 +32,11 @@ namespace HotelListing.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetCountries()
+        public async Task<IActionResult> GetCountries([FromQuery] RequestParams requestParams)
         {
             try
             {
-                var countries = await _unitOfWork.CountriesRepository.GetAll();
+                var countries = await _unitOfWork.CountriesRepository.GetPagedList(null, requestParams);
                 var results = _mapper.Map<IList<CountryDTO>>(countries);
                 return Ok(results);
             }
@@ -65,7 +65,7 @@ namespace HotelListing.Controllers
             }
         }
 
-        [Authorize(Roles = "administrator")]
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -95,7 +95,7 @@ namespace HotelListing.Controllers
 
         }
 
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")]
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -129,7 +129,7 @@ namespace HotelListing.Controllers
             }
         }
 
-        //[Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")]
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]

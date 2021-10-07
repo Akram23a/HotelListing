@@ -80,3 +80,6 @@
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.pdb
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.genruntimeconfig.cache
 /Users/mac/Projects/HotelListing/HotelListing/obj/Debug/net5.0/HotelListing.csproj.AssemblyReference.cache
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/JetBrains.Annotations.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/X.PagedList.dll
+/Users/mac/Projects/HotelListing/HotelListing/bin/Debug/net5.0/X.PagedList.Mvc.Core.dll
